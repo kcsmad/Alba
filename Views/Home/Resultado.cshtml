@@ -1,0 +1,26 @@
+﻿@model  List<ALBA.Models.IndexModel>
+
+@{
+    ViewBag.Title = "Resultado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<form action="@Url.Action()" method="post"></form>*@
+
+@Html.ValidationSummary(true)
+@Html.BeginForm()
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.resultado)</th>
+            </tr>
+            @foreach (var item in Model)
+            { 
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => modelItem.resultado)</td>
+                </tr>
+            }
+        </table>
+
+
+
+

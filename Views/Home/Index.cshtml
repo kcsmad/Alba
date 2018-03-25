@@ -1,0 +1,27 @@
+﻿@model ALBA.Models.IndexModel
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary()
+    <fieldset>
+        <legend>Pesquise seu arquivo de log.</legend>  
+        <div>
+            
+            @Html.TextBoxFor(x => x.file, new { type = "file" })
+        </div>
+          
+
+       
+
+
+        <div>
+            <input type="submit" id="pesquisar" name="pesquisar" value="Analisar Log" />
+        </div>
+    </fieldset>
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
